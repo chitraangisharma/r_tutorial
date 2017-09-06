@@ -1,51 +1,33 @@
+#WEEK 1
 install.packages("swirl")
 library(swirl)
 
+#1 What version of R are you using (hint: make sure you download the latest version and then type version)? Please note that this question does not count toward your grade, but it is important to make sure that you are using the latest version of R.
+version
+
+#2 Create a numeric vector containing the numbers 2.23, 3.45, 1.87, 2.11, 7.33, 18.34, 19.23. What is the average of these numbers?
+findavg <- c(2.23, 3.45, 1.87, 2.11, 7.33, 18.34, 19.23)
+mean(findavg)
+
+#3 Use a for loop to determine the value of ???i=125i2
+sum <- 0
+for (i in 1:25) {
+  sum <- sum + i^2
+  sum
+}
+
+#4 The cars dataset is available in base R. You can type cars to see it. Use the class function to determine what type of object is cars
 cars
 class(cars)
 
+#5 How many rows does the cars object have?
 nrow(cars)
-colnames(cars)
-cars[,2]
 
+#6 What is the name of the second column of cars?
+colnames(cars)
+
+#7 The simplest way to extract the columns of a matrix or data.frame is using [. For example you can access the second column with cars[,2]. What is the average distance traveled in this dataset?
 mean(cars[,2])
 
+#8 Familiarize yourself with the which function. What row of cars has a a distance of 85?
 which(cars[,2] == 85)
-
-tot = 0
-for (i in 1:25){
-  tot <- tot + i^2
-}
-
-
-install.packages("downloader")
-library(downloader) 
-url <- "https://raw.githubusercontent.com/genomicsclass/dagdata/master/inst/extdata/femaleMiceWeights.csv"
-filename <- "femaleMiceWeights.csv" 
-download(url, destfile=filename)
-
-df <- read.csv("femaleMiceWeights.csv")
-
-df
-
-df[12,]
-
-v1 <- df[[1]]
-
-v1
-
-length(v1)
-
-df$Bodyweight[11]
-
-v2 <- df[13:24, 2]
-v2
-mean(v2)
-
-
-set.seed(1)
-i <- sample( 13:24, 1)
-df$Bodyweight[i]
-
-
-
